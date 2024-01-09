@@ -1,0 +1,24 @@
+
+.overview {
+    &__first {
+        &_title {
+            // font-size: 118px;
+            font-family: Gilroy;
+            font-weight: 600;
+            background: linear-gradient(to right, #80a0e2, #e1c8cc, #80cce0);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 102px 0 68px 0;
+            font-size: calculateSize(54, 118);
+        }
+        &_img {
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 45px; 
+                object-fit: contain;
+                margin-bottom: 153px;
+            }
+        }
+    }
+}

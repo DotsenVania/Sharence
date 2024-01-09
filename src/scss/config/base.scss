@@ -9,6 +9,11 @@
 * всем классам содержащим *__container
 * Например header__container, main__container и т.д.
 */
+@function calculateSize($minSize, $maxSize) {
+  $fontSize: calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - 320px) / (1980 - 320)));
+  @return #{$fontSize};
+}
+
 [class*='__container'] {
   max-width: rem($maxWidthContainer);
   margin: 0 auto;
@@ -35,11 +40,16 @@
   }
 }
 
+body {
+  font-family: Gilroy;
+}
 // Оболочка ===================================================================
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  background-color: #161517;
+  color: white; 
 
   /** Поменять на clip - если используется в проекте position: sticky */
   overflow: hidden;
