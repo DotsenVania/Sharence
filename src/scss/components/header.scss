@@ -1,6 +1,4 @@
 .header {
-  // width: 100%;
-  // transition: background-color var(--bs-transition);
   z-index: 50;
 
   .header-is-sticky & {
@@ -8,7 +6,7 @@
     position: fixed;
     background-color: #007aff;
   }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     //  .header__container{
      
     //   &::before {
@@ -28,9 +26,11 @@
   &__container {
     height: rem($headerHeight);
     display: grid;
-    grid-template-columns: 33.3% 1fr;
+    grid-template-columns: 15% 1fr;
     align-items: center;
     justify-content: start;
+    @media (max-width: 1030px) {
+    }
     .logo--header {
       position: relative;
       display: flex;
@@ -67,9 +67,9 @@
     }
     .burger-menu {
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: 1fr 20%;
       transition: all ease 0.4s;
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         position: absolute;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
@@ -141,7 +141,10 @@
       }
 
       &__nav-menu {
-        @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        @media (max-width: 991px) {
+          justify-content: start;
           margin-left: 5%;
           margin-top: 100px;
           margin-bottom: 5%;
@@ -151,8 +154,8 @@
           justify-content: center;
           align-items: center;
           height: 100%;
-          font-size: calculateSize(18, 21);;
-          @media (max-width: 768px) {
+          font-size: calculateSize(18, 21);
+          @media (max-width: 991px) {
             flex-direction: column;
             align-items: start;
             // justify-content: center;
@@ -166,7 +169,7 @@
             &:hover {
               color: #80a0e2;
             }
-            @media (max-width: 768px) { 
+            @media (max-width: 991px) { 
               padding: 20px 10px;
             }
           }
@@ -178,7 +181,7 @@
         width: 100%;
         justify-content: end;
         z-index: 344;
-        @media (max-width: 768px) {
+        @media (max-width: 991px) {
           justify-content: start;
           
         }
@@ -194,7 +197,7 @@
           text-wrap: nowrap;
           background: #161517;
           transition: all ease 0.3s;
-          @media (max-width: 768px) {
+          @media (max-width: 991px) {
             background: #46444d;
             width: 100%; 
             margin: 0 20px;
@@ -231,7 +234,7 @@
 .icon-menu {
   display: none;
 
-  @include media-mx(768) {
+  @include media-mx(991) {
     display: block;
     position: relative;
     width: rem(30);

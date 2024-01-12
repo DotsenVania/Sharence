@@ -17,7 +17,7 @@
 [class*='__container'] {
   max-width: rem($maxWidthContainer);
   margin: 0 auto;
-  padding: 0 rem($mainOffset);
+  padding: 0 calculateSize(10, 50);
 }
 
 // Стили отзывчивых картинок (IBG) ============================================
