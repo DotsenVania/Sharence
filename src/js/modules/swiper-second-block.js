@@ -2,7 +2,7 @@ const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-effect: 'slide',
+    effect: 'slide',
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',
@@ -12,8 +12,8 @@ effect: 'slide',
         400: {
             slidesPerView: 1,
         },
-        600:  {
-             slidesPerView: 1.5,
+        600: {
+            slidesPerView: 1.5,
         },
         700: {
             slidesPerView: 1.7,
@@ -27,4 +27,21 @@ effect: 'slide',
     },
 });
 
- 
+const swiperTwo = new Swiper('.swiperTwo', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    effect: 'slide',
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+});

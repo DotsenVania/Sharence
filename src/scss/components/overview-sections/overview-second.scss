@@ -137,10 +137,9 @@
             width: 100%;
             display: flex;
             align-items: center;
-             @media (max-width: 600px) {
-                       justify-content: center;
-
-        }
+            @media (max-width: 600px) {
+                justify-content: center;
+            }
             &__wrapper {
                 display: flex;
                 flex-direction: column;
@@ -195,10 +194,12 @@
                 margin: 0 5px;
                 top: 1px;
             }
-            &.swiper {
-                width: 100%;
+            &.swiper,
+            &.swiperTwo {
+                position: relative;
                 height: 470px;
                 margin-bottom: 50px;
+
                 .swiper-item {
                     display: flex;
                     height: 400px;
