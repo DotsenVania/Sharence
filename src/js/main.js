@@ -10,6 +10,7 @@
 // import AOS from 'aos'
 
 import BaseHelpers from './helpers/base-helpers';
+import { BurgerActive } from './modules/burger';
 
 BaseHelpers.checkWebpSupport();
 
@@ -18,3 +19,5 @@ BaseHelpers.addTouchClass();
 BaseHelpers.addLoadedClass();
 
 BaseHelpers.headerFixed();
+
+new BurgerActive('.burger-menu', '.burger-menu__icon').toggleActive();

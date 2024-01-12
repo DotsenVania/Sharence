@@ -42,6 +42,11 @@
 
 body {
   font-family: Gilroy;
+   overflow-x: hidden;
+  overflow-y: auto;
+  &.active {
+    overflow: hidden;
+  }
 }
 // Оболочка ===================================================================
 .wrapper {
