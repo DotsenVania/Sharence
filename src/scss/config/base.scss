@@ -63,7 +63,7 @@ body {
 .page {
   position: relative;
   flex: 1 1 auto;
-
+  padding-top: 100px;
   [data-observ] {
     position: absolute;
     top: 0;

@@ -1,6 +1,8 @@
 
 .overview {
-    &__first {
+    
+    &__first-section {
+        padding: 0 calculateSize(10, 50);
         &_title {
             // font-size: 118px;
             font-family: Gilroy;
@@ -8,7 +10,7 @@
             background: linear-gradient(to right, #80a0e2, #e1c8cc, #80cce0);
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: calculateSize(20, 118) 0 68px 0;
+            margin: calculateSize(30, 118) 0 calculateSize(30, 68) 0;
             font-size: calculateSize(54, 118);
         }
         &_img {
@@ -17,7 +19,7 @@
                 height: auto;
                 border-radius: calculateSize(10, 45); 
                 object-fit: contain;
-                margin-bottom: 153px;
+                margin-bottom: calculateSize(10, 153);
             }
         }
     }
