@@ -34,36 +34,24 @@ const swiperTwo = new Swiper('.swiper-two', {
   effect: 'slide',
   breakpoints: {
     320: {
-        slidesPerView: 2,
+        slidesPerView: 1.8,
     },
-    400: {
-      slidesPerView: 3,
+    424: {
+      slidesPerView: 2.8,
     },
-    700: {
-      slidesPerView: 3.5,
+    769: {
+      slidesPerView: 3.8,
     },
-    1000: {
-      slidesPerView: 3.7,
+    1024: {
+      slidesPerView: 4.8,
     },
-    1300: {
-      slidesPerView: 4.7,
-    },
-    1600: {
+    1440: {
       slidesPerView: 5.8,
     },
-    1900: {
-      slidesPerView: 6,
-    },
+    1980: {
+      slidesPerView: 5,
+    }
   },
   centeredSlides: true,
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
   spaceBetween: 30,
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
 });
