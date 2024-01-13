@@ -11,7 +11,7 @@
 
 import BaseHelpers from './helpers/base-helpers';
 import { BurgerActive } from './modules/burger';
-import './modules/swiper-second-block';
+import './modules/swipers';
 
 
 BaseHelpers.checkWebpSupport();

@@ -53,11 +53,6 @@
             padding-top: calculateSize(46, 88);
             &__title {
                 font-size: calculateSize(46, 88);
-                font-style: normal;
-                font-weight: 600;
-                background: linear-gradient(to right, #80a0e2, #e1c8cc, #80cce0);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
             &__icons-info {
                 display: flex;

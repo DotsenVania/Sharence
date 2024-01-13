@@ -6,10 +6,7 @@
         &_title {
             // font-size: 118px;
             font-family: Gilroy;
-            font-weight: 600;
-            background: linear-gradient(to right, #80a0e2, #e1c8cc, #80cce0);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            
             margin: calculateSize(30, 118) 0 calculateSize(30, 68) 0;
             font-size: calculateSize(54, 118);
         }
