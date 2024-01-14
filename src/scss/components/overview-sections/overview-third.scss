@@ -17,10 +17,11 @@
         height: auto;
         &__title {
             font-size: calculateSize(46, 88);
+            margin-bottom: calculateSize(14, 34);
         }
         &__description{
             font-size: calculateSize(18, 24);
-            
+            margin-bottom: calculateSize(28, 72);
         }
     }
 }
