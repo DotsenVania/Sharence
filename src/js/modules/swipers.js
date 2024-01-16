@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper', {
+new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
@@ -6,6 +6,7 @@ const swiper = new Swiper('.swiper', {
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
   breakpoints: {
     // Додайте брейкпоінти для різних розмірів екрану
@@ -19,7 +20,9 @@ const swiper = new Swiper('.swiper', {
       slidesPerView: 1.7,
     },
   },
+  // autoHeight: true,
   spaceBetween: 30,
+  
 
   // And if we need scrollbar
   scrollbar: {
@@ -27,7 +30,7 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-const swiperTwo = new Swiper('.swiper-two', {
+new Swiper('.swiper-two', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
@@ -54,4 +57,31 @@ const swiperTwo = new Swiper('.swiper-two', {
   },
   centeredSlides: true,
   spaceBetween: 30,
+});
+
+new Swiper('.swiper-fifth', {
+  // Optional parameters
+  loop: true,
+  direction: 'horizontal',
+  effect: 'slide',
+  // If we need pagination
+  pagination: {
+    el: '.paginations',
+    clickable: true,
+  },
+  breakpoints: {
+    // Додайте брейкпоінти для різних розмірів екрану
+    400: {
+      slidesPerView: 1,
+    },
+    600: {
+      slidesPerView: 1.5,
+    },
+    700: {
+      slidesPerView: 1.7,
+    },
+  },
+  // autoHeight: true,
+  spaceBetween: 30,
+  
 });

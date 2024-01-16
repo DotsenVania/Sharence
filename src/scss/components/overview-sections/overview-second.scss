@@ -147,67 +147,6 @@
                 }
             }
         }
-        &__swiper-block {
-            margin-top: 32px;
-            padding-left: 10px;
-            @media (max-width: 600px) {
-                    padding: 15px;
-                }
-            .swiper-pagination {
-                padding: 10px;
-                border-radius: 20px;
-                background-color: #fff;
-                width: auto;
-                left: 50%;
-                transform: translate(-50%, 0px);
-                background-color: #201f22;
-            }
-            .swiper-pagination-bullet {
-                background-color: #918f9e; /* колір активного булета */
-            }
-            .swiper-pagination-bullet-active {
-                background-color: #918f9e; /* колір неактивного булета */
-            }
-            .swiper-pagination-bullet {
-                position: relative;
-                width: 12px;
-                height: 12px;
-                margin: 0 5px;
-                top: 1px;
-            }
-            &.swiper {
-                position: relative;
-                min-height: 470px;
-                // margin-bottom: 30px;
-                .swiper-item {
-                    display: flex;
-                    height: 400px;
-                    padding: 48px;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    gap: 16px;
-                    align-self: stretch;
-                    background-color: #201f22;
-                    border-radius: 36px;
-                    &__title {
-                        font-size: 28px;
-                        font-weight: 400;
-                        align-self: start;
-                        margin-bottom: 34px;
-                        color: #918f9e;
-                    }
-                    &__description {
-                        font-size: calculateSize(18, 35);
-                    }
-                    &__text {
-                        font-size: calculateSize(30, 48);
-                        font-style: normal;
-                        font-weight: 400;
-                        color: #e0e0e0;
-                    }
-                }
-            }
-        }
+        
     }
 }
