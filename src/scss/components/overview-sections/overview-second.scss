@@ -3,7 +3,7 @@
         padding: 0 calculateSize(10, 50);
         position: relative;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         grid-template-rows: 1fr 1fr;
         width: 100%;
         gap: 0px;
@@ -50,15 +50,16 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding-top: calculateSize(46, 88);
+            padding-top: calculateSize(46, 78);
             &__title {
-                font-size: calculateSize(46, 88);
+                font-size: calculateSize(46, 78);
             }
             &__icons-info {
                 display: flex;
                 justify-content: center;
                 width: 100%;
-                margin-top: calculateSize(26, 68);
+                margin: calculateSize(26, 58);
+                overflow: auto;
                 img {
                     margin-right: 34px;
                 }
@@ -71,7 +72,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: calculateSize(20, 200);
+            padding: calculateSize(20, 80);
             color: #e0e0e0;
             &__title {
                 font-size: 28px;
@@ -81,7 +82,7 @@
                 color: #918f9e;
             }
             &__description {
-                font-size: calculateSize(18, 35);
+                font-size: calculateSize(18, 25);
             }
         }
 
@@ -89,7 +90,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: calculateSize(20, 200);
+            padding: calculateSize(20, 80);
             &__text {
                 font-size: calculateSize(30, 48);
                 font-style: normal;

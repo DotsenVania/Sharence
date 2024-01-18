@@ -1,0 +1,81 @@
+.overview__seventh-section {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    min-height: 1000px;
+    @media (max-width: 600px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .seventh-block {
+        width: 50%;
+        @media (max-width: 600px) {
+            width: 100%;
+            // text-align: center;
+        }
+        &__title {
+            font-size: calculateSize(46, 88);
+        }
+        &__more {
+            // margin-top: calculateSize(14, 34);
+            font-size: calculateSize(18, 28);
+            order: 1;
+            .more_item {
+                cursor: pointer;
+                margin-top: calculateSize(14, 34);
+                color: #918f9e;
+                transition: color ease 0.3s;
+            }
+            .more_item:hover {
+                color: white;
+            }
+        }
+    }
+    .seventh-block-right {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 50%;
+        overflow: hidden;
+        @media (max-width: 600px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .right__wrapper {
+            width: calculateSize(210, 397);
+            height: calculateSize(445, 832);
+            position: relative;
+            overflow: hidden;
+            @media (max-width: 600px) {
+                margin-top: calculateSize(14, 34);
+            }
+
+            .border {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                z-index: 10;
+                height: 100%;
+                width: 100%;
+                width: auto;
+                transform: translateX(-50%);
+            }
+            .screen {
+                position: absolute;
+                height: 97%;
+                width: 95%;
+                object-fit: cover;
+                top: 1%;
+                left: 50%;
+                z-index: 9;
+                border-radius: calculateSize(30, 52);
+                transform: translateX(-50%);
+                transition: opacity ease 0.4s;
+            }
+        }
+    }
+}

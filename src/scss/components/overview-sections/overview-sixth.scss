@@ -1,0 +1,41 @@
+.overview__sixth-section {
+    display: flex;
+    position: relative;
+    justify-content: end;
+    min-height: calculateSize(623, 1016);
+    margin-top: calculateSize(84, 144);
+    .sixth {
+        position: relative;
+        width: calculateSize(320, 785);
+        z-index: 2;
+        &__title {
+            font-size: calculateSize(46, 88);
+        }
+        &__description {
+            font-size: calculateSize(18, 28);
+            margin-top: calculateSize(14, 34);
+        }
+    }
+    .sixth-bg-img {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 20%;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            background: linear-gradient(190deg, #161517 27.6%, #16151700 52.08%, #161517 82.81%);
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
