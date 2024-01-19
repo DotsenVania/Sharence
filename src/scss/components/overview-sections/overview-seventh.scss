@@ -45,10 +45,7 @@
             width: 100%;
         }
         .right__wrapper {
-            width: calculateSize(210, 397);
-            height: calculateSize(445, 832);
             position: relative;
-            overflow: hidden;
             @media (max-width: 600px) {
                 margin-top: calculateSize(14, 34);
             }
@@ -63,18 +60,24 @@
                 width: auto;
                 transform: translateX(-50%);
             }
-            .screen {
-                position: absolute;
-                height: 97%;
-                width: 95%;
-                object-fit: cover;
-                top: 1%;
-                left: 50%;
-                z-index: 9;
-                border-radius: calculateSize(30, 52);
-                transform: translateX(-50%);
-                transition: opacity ease 0.4s;
+            .screens__wrapper {
+                width: calculateSize(210, 397);
+                height: calculateSize(445, 832);
+                overflow: hidden;
+                .screen {
+                    position: absolute;
+                    height: 97%;
+                    width: 95%;
+                    object-fit: cover;
+                    top: 1%;
+                    left: 50%;
+                    z-index: 9;
+                    border-radius: calculateSize(30, 52);
+                    transform: translateX(-50%);
+                    transition: opacity ease 0.4s;
+                }
             }
+            
         }
     }
 }
