@@ -52,13 +52,12 @@
 
             .border {
                 position: absolute;
-                top: 0;
+                top: 50%;
                 left: 50%;
                 z-index: 10;
                 height: 80%;
                 width: 80%;
-                width: auto;
-                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
             }
             .screens__wrapper {
                 width: calculateSize(210, 397);
@@ -67,13 +66,13 @@
                 .screen {
                     position: absolute;
                     height: 78%;
-                    width: 80%;
+                    width: 72%;
                     object-fit: cover;
-                    top: 1%;
+                    top: 51%;
                     left: 50%;
                     z-index: 9;
                     border-radius: calculateSize(30, 52);
-                    transform: translateX(-50%);
+                    transform: translate(-50%, -51%);
                     transition: opacity ease 0.4s;
                 }
             }

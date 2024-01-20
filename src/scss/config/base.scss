@@ -13,6 +13,10 @@
   $fontSize: calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - 320px) / (1980 - 320)));
   @return #{$fontSize};
 }
+@function calculateSizeProcent($minSize, $maxSize) {
+  $fontSize: calc(#{$minSize}% + (#{$maxSize} - #{$minSize}) * ((100vw - 320%) / (1980 - 320)));
+  @return #{$fontSize};
+}
 
 [class*='__container'] {
   max-width: rem($maxWidthContainer);

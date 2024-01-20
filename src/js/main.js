@@ -13,6 +13,7 @@ import BaseHelpers from './helpers/base-helpers';
 import { BurgerActive } from './modules/burger';
 import './modules/swipers';
 import './helpers/seventh-block-helper'
+import './helpers/more-list'
 
 BaseHelpers.checkWebpSupport();
 
