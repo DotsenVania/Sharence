@@ -14,6 +14,7 @@ import { BurgerActive } from './modules/burger';
 import './modules/swipers';
 import './helpers/seventh-block-helper'
 import './helpers/more-list'
+import './helpers/hammerr'
 
 BaseHelpers.checkWebpSupport();
 
@@ -23,4 +24,4 @@ BaseHelpers.addLoadedClass();
 
 BaseHelpers.headerFixed();
 
-new BurgerActive('.burger-menu', '.burger-menu__icon').toggleActive();
+new BurgerActive('.burger-menu', '.burger-menu__icon').toggleActiveClick();

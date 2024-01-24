@@ -11,7 +11,7 @@ class BurgerActive {
         this.burgerIcon = document.querySelector(this.selectorIconBurger);
     }
 
-    toggleActive () {
+    toggleActiveClick () {
         window.addEventListener('resize', () => {
             if (window.innerWidth > 991) {
                 console.log('deleted')
@@ -26,6 +26,13 @@ class BurgerActive {
             this.html.classList.toggle('active');
         })
     }
+    toggleActiveClickSwipe () {
+        this.burgerIcon.classList.toggle('active');
+            this.burgerBlock.classList.toggle('active'); 
+            this.html.classList.toggle('active');
+    }
+
+
 };
 
 export {BurgerActive}
