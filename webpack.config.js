@@ -7,7 +7,7 @@ export const webpackConfig = async (isMode) => {
     build: resolve('dist'),
   };
 
-	const context = join(paths.src, 'js');
+  const context = join(paths.src, 'js');
 
   return {
     context,
@@ -24,11 +24,14 @@ export const webpackConfig = async (isMode) => {
           test: /\.m?js$/,
           exclude: /node_modules/,
           use: {
-	          loader: 'esbuild-loader',
-	          options: { target: 'ES6', },
+            loader: 'esbuild-loader',
+            options: { target: 'ES6' },
           },
           resolve: {
             fullySpecified: false,
+            fallback: {
+              "path": false
+          }
           },
         },
       ],

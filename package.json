@@ -75,6 +75,8 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "swiper": "^8.4.7"
+    "stream-browserify": "^3.0.0",
+    "swiper": "^8.4.7",
+    "util": "^0.12.5"
   }
 }

@@ -1,0 +1,87 @@
+.tocenomics {
+    padding: 0 calculateSize(10, 50);
+    margin: 0 auto;
+    &__header {
+        &_title {
+            font-size: calculateSize(46, 88);
+        }
+    }
+    &__footer {
+        display: flex;
+        height: 100%;
+        @media (max-width: 769px) {
+            align-items: center;
+            flex-direction: column;
+        }
+        .left__wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            margin: 10px 10px 10px calculateSize(18, 135);
+            @media (max-width: 769px) {
+               width: 100%;
+               align-items: center; 
+               margin: 10px ;
+               order: 2;
+            }
+            .tocenomics__item {
+                font-size: calculateSize(18, 55);
+                margin-top: 20px;
+                color: #808080;
+                &.active {
+                    color: white;
+                }
+            }
+        }
+        .svg__circle {
+            position: relative;
+            transition: all ease 0.5s;
+            border: 2px solid #fff;
+            z-index: 11;
+            &.active {
+                stroke: #575757;
+                stroke-width: 70;
+            }
+
+            &:hover {
+                stroke: #575757;
+                stroke-width: 70;
+            }
+        }
+        .chart {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 50%;
+            height: 100%;
+            @media (max-width: 769px) {
+                width: 100%;
+            }
+            svg {
+                width: calculateSize(320, 600);
+                height: calculateSize(320, 600);
+            }
+            &_text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                font-size: calculateSize(18, 35);
+                color: #ffffffb4;
+                &_active {
+                    color: #60acbe;
+                    font-weight: bold;
+                }
+            }
+        }
+        .text {
+            font-weight: 400;
+            font-size: 23px;
+            stroke: white;
+            pointer-events: none;
+            font-size: calculateSize(18, 40);
+        }
+    }
+}

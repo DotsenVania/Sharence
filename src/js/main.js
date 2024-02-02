@@ -15,6 +15,7 @@ import './modules/swipers';
 import './helpers/seventh-block-helper'
 import './helpers/more-list'
 import './helpers/hammerr'
+import {cart1} from './modules/chart';
 
 BaseHelpers.checkWebpSupport();
 
@@ -25,3 +26,5 @@ BaseHelpers.addLoadedClass();
 BaseHelpers.headerFixed();
 
 new BurgerActive('.burger-menu', '.burger-menu__icon').toggleActiveClick();
+const parrentChart = document.querySelector('.chart');
+cart1.createCircleChart(parrentChart);
