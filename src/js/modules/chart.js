@@ -1,9 +1,9 @@
 class Chart {
-  activeChartId = 0;
+  activeChartId = 4;
   chartActiveText = '';
   chartDescElement;
-  chartListElement;
-  circleElements;
+  chartListElements;
+  circleElements = [];
   constructor({ radius = 300, stroke = 40, textSize = 40 }, chartData, parent) {
     this.options = { radius, stroke, textSize };
     this.chartData =
@@ -39,9 +39,7 @@ class Chart {
     );
 
     if (args && typeof args === 'object') {
-      Object.entries(args).forEach(([key, value]) =>
-        elem.setAttribute(key, value)
-      );
+      Object.entries(args).map(([key, value]) => elem.setAttribute(key, value));
     }
     return elem;
   }
@@ -50,7 +48,7 @@ class Chart {
     const domElem = document.createElement(elementType);
 
     if (args && typeof args === 'object') {
-      Object.entries(args).forEach(([key, value]) =>
+      Object.entries(args).map(([key, value]) =>
         domElem.setAttribute(key, value)
       );
     }
@@ -62,8 +60,7 @@ class Chart {
     const chartTitleTextElement = this.createDOMElement('div', {
       class: 'chart_text',
     });
-    const br = this.createDOMElement('br');
-    chartTitleTextElement.innerHTML  = `Total supply <br> 200 000 000`;
+    chartTitleTextElement.innerHTML = `Total supply <br> 200 000 000`;
 
     this.chartDescElement = this.createDOMElement('div', {
       class: 'chart_text_active',
@@ -76,7 +73,7 @@ class Chart {
 
   createChartListElements(chartData) {
     const parent = document.querySelector('.left__wrapper');
-    this.chartListElement = chartData.map((i, num) => {
+    this.chartListElements = chartData.map((i, num) => {
       const listElement = this.createDOMElement('div', {
         class: 'tocenomics__item',
         'data-id-chart': num,
@@ -86,54 +83,49 @@ class Chart {
       return listElement;
     });
   }
-  removeClass(listElement) {
-    listElement.forEach((elem) => {
-      elem.classList.remove('active');
-    });
+  removeClass(elements) {
+    elements.forEach((elem) => elem.classList.remove('active'));
   }
 
-  activeChartElement() {
-    this.chartActiveText = `${this.chartData[0].name} ${this.chartData[0].procent}%`;
+  activeChartElement(e) {
+    this.removeClass(this.circleElements);
     this.circleElements[this.activeChartId].classList.add('active');
-    this.circleElements.forEach((i, num) => {
-     
-      i.addEventListener('click', ({ target }) => {
-        this.activeChartId = target.getAttribute('id');
-        this.chartData.forEach((chart, num) => {
-          if (+this.activeChartId === num) {
-            this.removeClass(this.circleElements);
-            this.chartDescElement.textContent = `${chart.name} ${chart.procent}%`;
-            target.classList.add('active');
-          }
-          
-        });
-        this.activeListElement();
-      });
+    this.chartDescElement.textContent = `${this.chartData[this.activeChartId].name} ${this.chartData[this.activeChartId].procent}%`;
+    if(!e) {
+      return; 
+    }
+    const {target} = e; 
+    this.chartActiveText = `${this.chartData[0].name} ${this.chartData[0].procent}%`;
+
+    this.activeChartId = target.getAttribute('id');
+    this.chartData.map((chart, num) => {
       if (+this.activeChartId === num) {
         this.removeClass(this.circleElements);
-        this.chartDescElement.textContent = `${this.chartData[num].name} ${this.chartData[num].procent}%`;
-        this.circleElements[num].classList.add('active');
+        this.chartDescElement.textContent = `${chart.name} ${chart.procent}%`;
+        target.classList.add('active');
       }
     });
+    this.activeListElement();
   }
   activeListElement() {
-    // if (!this.chartListElement) {
-    //   return;
-    // }
-    this.chartListElement.forEach((i, num) => {
+    this.chartListElements.map((i, num) => {
       if (+this.activeChartId === num) {
         i.classList.add('active');
-      }else {
+      } else {
         i.classList.remove('active');
       }
-      i.addEventListener('click', ({target}) => {
-        this.activeChartId = target.getAttribute('data-id-chart');
-        this.activeChartElement();
-        this.removeClass(this.chartListElement);
-        if (+this.activeChartId === num) {
-          i.classList.add('active');
-        }
-      })
+      i.addEventListener(
+        'click',
+        ({ target }) => {
+          this.activeChartId = target.getAttribute('data-id-chart');
+          this.activeChartElement();
+          this.removeClass(this.chartListElements);
+          if (+this.activeChartId === num) {
+            i.classList.add('active');
+          }
+        },
+        { passive: true }
+      );
     });
   }
   createCircleChart() {
@@ -148,7 +140,7 @@ class Chart {
 
     let angleValue = 0;
 
-    this.chartData.forEach((i, num) => {
+    this.chartData.map((i, num) => {
       const circle1 = this.createSvgElement('circle', {
         class: 'svg__circle',
         id: num,
@@ -161,15 +153,18 @@ class Chart {
         'stroke-dashoffset': this.calculateRemainingLength(i.procent),
         style: `transform:rotate(${angleValue}deg); transform-origin: 50% 50%`,
       });
+      circle1.addEventListener('click', (e) => {
+        this.activeChartElement(e);
+      });
       circleGroup.appendChild(circle1);
       angleValue += this.calculateAngleFromPercentage(i.procent);
     });
 
     this.circleElements = circleGroup.querySelectorAll('.svg__circle');
     this.createChartDescription();
-    this.activeChartElement();
     this.createChartListElements(this.chartData);
     this.activeListElement();
+    this.activeChartElement();
     const circleDecor = this.createSvgElement('circle', {
       r: '240',
       cx: '50%',
@@ -182,7 +177,7 @@ class Chart {
     svg.appendChild(circleDecor);
 
     let angleValueText = 0;
-    this.chartData.forEach((i, num) => {
+    this.chartData.map((i, num) => {
       const gWrapperText = this.createSvgElement('g', {
         style: `transform: rotate(${
           angleValueText + this.calculateAngleFromPercentage(i.procent) / 2

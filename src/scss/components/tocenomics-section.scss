@@ -1,6 +1,8 @@
 .tocenomics {
     padding: 0 calculateSize(10, 50);
     margin: 0 auto;
+    margin-top: calculateSize(84, 144);
+
     &__header {
         &_title {
             font-size: calculateSize(46, 88);
@@ -17,27 +19,31 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: start;
             width: 50%;
             margin: 10px 10px 10px calculateSize(18, 135);
             @media (max-width: 769px) {
-               width: 100%;
-               align-items: center; 
-               margin: 10px ;
-               order: 2;
+                width: 100%;
+                align-items: center;
+                margin: 10px;
+                order: 2;
             }
             .tocenomics__item {
                 font-size: calculateSize(18, 55);
                 margin-top: 20px;
                 color: #808080;
+                cursor: pointer; 
+                &:hover {
+                    color: white; 
+                }
                 &.active {
                     color: white;
                 }
             }
         }
         .svg__circle {
-            position: relative;
+            // position: relative;
             transition: all ease 0.5s;
-            border: 2px solid #fff;
             z-index: 11;
             &.active {
                 stroke: #575757;
@@ -59,8 +65,8 @@
                 width: 100%;
             }
             svg {
-                width: calculateSize(320, 600);
-                height: calculateSize(320, 600);
+                width: calculateSize(320, 700);
+                height: calculateSize(320, 700);
             }
             &_text {
                 position: absolute;
@@ -82,6 +88,20 @@
             stroke: white;
             pointer-events: none;
             font-size: calculateSize(18, 40);
+        }
+    }
+    #container {
+        path {
+            transition: all ease 0.4s;
+            &.active {
+                stroke: #575757;
+                stroke-width: 7px;
+                fill: #575757;
+            }
+            &:hover {
+
+                fill: #575757;
+            }
         }
     }
 }
